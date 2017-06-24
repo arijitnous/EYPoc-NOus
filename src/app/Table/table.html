@@ -1,0 +1,33 @@
+
+   
+<div class="MyTableWrap">
+    <div class="CharyHeadTitlw">
+        <div class="CharyHead clearfix" >
+            <span>Performance Indicator</span>
+            <i class="pull-right fa fa-ellipsis-v"></i>
+        </div>
+    </div>
+
+
+   <table class="table table-hover table-striped MyTable1">
+    <thead>
+        <tr>
+            <th>Cost Price</th>
+            <th>Order Date</th>
+            <th>Order Qty</th>
+            <th>Sale Price</th>
+            <th>Ship Date</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of Table; let i = index" (click)="setClickedRow(i)" [class.active]="i == selectedRow">
+        <td>{{game.CostPrice}} &#036;</td>
+            <td >{{game.OrderDate}}</td>
+            <td>{{game.OrderQty}}</td>
+            <td >{{game.SalePrice}} &#036;</td>
+            <td >{{game.ShipDate}}</td>
+           
+        </tr>
+    </tbody>
+</table>
+         </div>

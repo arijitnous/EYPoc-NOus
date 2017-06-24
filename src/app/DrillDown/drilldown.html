@@ -1,0 +1,77 @@
+<div class="container-fluid">
+   <div class="LeftWrap clearfix" style=" padding-left:10px;">
+        <div class="row">
+            <div class="col-xs-12 ChartBlock">
+               <div class="ChartWrap">
+                    <div class="CharyHeadTitlw">
+                        <div class="CharyHead clearfix" >
+                            <span>Products</span>
+                            <i class="pull-right fa fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                <stock> </stock>
+                </div>
+            </div>
+        </div>
+        <div class="row DonutCharts">  
+            <div class="col-md-6 ChartBlock">
+                <div class="ChartWrap">
+                    <div class="CharyHeadTitlw">
+                        <div class="CharyHead clearfix" >
+                            <span>Products</span>
+                            <!--<div class="dropdown">
+                               <select  (change)="display($event.target.value)"><span class="pull-right fa fa-ellipsis-v"></span>
+                                  <option [value]="i"  *ngFor=" let i of names">{{i}}</option>
+                                </select>
+                            </div>  -->
+                            <div class="dropdown pull-right" >
+                                        <i class="pull-right fa fa-ellipsis-v dropdown-toggle" data-toggle="dropdown"></i>
+                                
+                                        <ul class="dropdown-menu"  >
+                                               <li  [value]="i"  *ngFor=" let i of names" ><a (click)="display($event.target)">{{i}}</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </div>
+                <chart  [(options)]="categoryOptions"></chart>
+                </div>
+            </div>
+            <div class="col-md-6 ChartBlock">
+               <div class="ChartWrap">
+                    <div class="CharyHeadTitlw">
+                        <div class="CharyHead clearfix" >
+                            <span>Country</span>
+                            <i class="pull-right fa fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+               <chart  [options]="countryOptions"></chart>
+                </div>
+            </div>
+            <div class="col-md-6 ChartBlock">
+               <div class="ChartWrap">
+                    <div class="CharyHeadTitlw">
+                        <div class="CharyHead clearfix" >
+                            <span>Sales Person</span>
+                            <i class="pull-right fa fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                <chart  [options]="personOptions"></chart>
+                </div>
+            </div>
+            <div class="col-md-6 ChartBlock">
+               <div class="ChartWrap">
+                    <div class="CharyHeadTitlw">
+                        <div class="CharyHead clearfix" >
+                            <span>Country</span>
+                            <i class="pull-right fa fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+                <chart  [options]="countryOptions"></chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="RightWrap clearfix">
+        <sidebar1></sidebar1>
+    </div>
+</div>

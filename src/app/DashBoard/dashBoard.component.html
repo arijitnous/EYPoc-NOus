@@ -1,0 +1,240 @@
+<div class="container-fluid">
+        <div class="LeftWrap clearfix">
+                        <!--<div class="col-xs-12 DropdSec">
+                            <div class="pull-right">
+                                <dropdown></dropdown>
+                            </div>
+                        </div>-->
+
+
+                        <div class="row">
+                            <div class="col-sm-4"> 
+                                <div class="ChartWrap">
+                                    <my-table> </my-table>
+                                </div>
+                                <div class="ChartWrap">
+                                    <simple-table></simple-table>
+                                </div>
+                            </div>
+                           
+
+                            <div class="col-sm-8 BarChartWrap">
+                                <div class="row">
+                                    <div class="col-sm-6 ChartBlock" routerLink="/drilldown">
+                                        <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix" >
+                                                    <span class="chartHead">Income</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options" ></chart>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ChartBlock">
+                                       <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>NII</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options"></chart>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ChartBlock">
+                                        <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>NFI</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options"></chart>
+                                        </div>
+                                    </div>
+                                     
+                                    <div class="col-sm-6 ChartBlock">
+                                        <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>Cost</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options"></chart>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 ChartBlock">
+                                       <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>Staff Cost VS Headcount</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options1"></chart>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ChartBlock">
+                                        <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>Loans: Impairments VS Non-performing </span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options1"></chart>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ChartBlock">
+                                       <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>Customer Assets and NIM</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options1"></chart>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ChartBlock">
+                                       <div class="ChartWrap">
+                                            <div class="CharyHeadTitlw">
+                                                <div class="CharyHead clearfix">
+                                                    <span>Customer Liabilities and NIM</span>
+                                                    <i class="pull-right fa fa-ellipsis-v"></i>
+                                                </div>
+                                            </div>
+                                            <chart [options]="options1"></chart>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                </div>
+
+
+
+        <div class="RightWrap clearfix">
+        
+               <div class="sidebar-nav pull-right" id="sidebar">
+                <div>
+                    <ul class="nav">
+                        <li class="active">
+                            <h5>Search</h5>
+                            <button class="Mybtn btn btn-block">Metric Search</button>
+                            <button class="Mybtn btn btn-block">Product Search</button>
+                        </li>
+                        <li><h5>Time Period</h5>
+                       <div class="btn-group width100">
+                            <button class="Mybtn active width20">M</button>
+                            <button class="Mybtn width20">Q</button>
+                            <button class="Mybtn width20">HY</button>
+                            <button class="Mybtn width20">FY</button>
+                            <button class="Mybtn width20">YTD</button>
+                        </div>
+                        </li>
+                        <li><h5>COMPARISON</h5>
+                         <div class="btn-group width100">
+                            <button class="Mybtn width50 active" (click)="showProfit()">Category</button>
+                            <button class="Mybtn width50 "(click)="showCountry()">Country</button>
+                            <button class="Mybtn width50"(click)="showPerson()">Person</button>
+                            <button class="Mybtn width50">Prior Period</button>
+                          </div>
+                          
+                        </li>
+                        <li><h5>FILTER</h5>
+                        <accordion [showArrows]="true">
+                        <accordion-group heading="Geography">
+                            <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                            
+                        </accordion-group>
+                         </accordion> 
+                          <accordion [showArrows]="true">
+                        <accordion-group heading="Product">
+                            <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion> 
+                          <accordion [showArrows]="true">
+                        <accordion-group heading="Segment">
+                            <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion> 
+                         
+                        </li>
+                       <li><h5>QUICK LINKS</h5>
+                        <accordion [showArrows]="true">
+                        <accordion-group heading="ScoreCard">
+                           <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion>
+                           <accordion [showArrows]="true">
+                        <accordion-group heading="Strategic Initiatives">
+                           <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion>
+                          <accordion [showArrows]="true">
+                        <accordion-group heading="External Markets">
+                            <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion>
+                          <accordion [showArrows]="true">
+                        <accordion-group heading="Operational Risk">
+                           <ul class="subMenu">
+                                <li><a href="#">PickList</a></li>
+                                <li><a href="#">Tree</a></li>
+                                <li><a href="#">Paginator</a></li>
+                                <li><a href="#">DataTable</a></li>
+                            </ul>
+                        </accordion-group>
+                         </accordion>
+                        </li>
+                        <li style="text-align:center; padding:5px 0 0 0;"><button class="Mybtn Success">REFRESH</button>
+                            <button class="Mybtn Danger">RESET</button>
+                        </li>
+                   
+                        <li><span><i class="fa fa-table" aria-hidden="true"></i> Report Generator
+                       </span> </li>
+                        <li><span><i  class="fa fa-print" aria-hidden="true"></i> Print</span>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+
+        </div>
+ </div>
